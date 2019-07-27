@@ -46,51 +46,80 @@ class ConverterViewController: UIViewController {
         if currentConv?.label == "Celcius to Farhenheit" && currentInput?.numbers != "" {
             outputDisplay.text = String(Double(currentInput!.numbers)!*(9/5) + 32) + " " + currentConv!.outputUnit
         }
-        if currentConv?.label == "miles to kilometers" && currentInput?.numbers != "" {
-            outputDisplay.text = String(Double(currentInput!.numbers)! * 1.609344) + " " + currentConv!.outputUnit
+        if currentConv?.label == "Miles to Kilometers" && currentInput?.numbers != "" {
+            outputDisplay.text = String(Double(currentInput!.numbers)! * 1.61) + " " + currentConv!.outputUnit
         }
-        if currentConv?.label == "kilometers to miles" && currentInput?.numbers != "" {
-            outputDisplay.text = String(Double(currentInput!.numbers)! / 1.609344) + " " + currentConv!.outputUnit
+        if currentConv?.label == "Kilometers to Miles" && currentInput?.numbers != "" {
+            outputDisplay.text = String(Double(currentInput!.numbers)! / 1.61) + " " + currentConv!.outputUnit
         }
     }
     
     @IBAction func zero(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(0))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func one(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(1))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func two(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(2))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func three(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(3))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func four(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(4))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func five(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(5))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func six(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(6))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func seven(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(7))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func eight(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(8))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func nine(_ sender: Any) {
+        inputDisplay.text = (currentInput?.append(9))! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func decimal(_ sender: Any) {
+        currentInput?.decimal()
+        inputDisplay.text = (currentInput?.numbers)! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func clear(_ sender: Any) {
+        currentInput?.clear()
+        inputDisplay.text = (currentInput?.numbers)! + " " + currentConv!.inputUnit
+        outputDisplay.text = (currentInput?.numbers)! + " " + currentConv!.outputUnit
     }
     
     @IBAction func negativeOrPositive(_ sender: Any) {
+        currentInput?.negative()
+        inputDisplay.text = (currentInput?.numbers)! + " " + currentConv!.inputUnit
+        updateConv()
     }
     
     @IBAction func Converter(_ sender: Any) {
@@ -130,8 +159,6 @@ class ConverterViewController: UIViewController {
         
         self.present(options, animated: true, completion: nil)
     }
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
